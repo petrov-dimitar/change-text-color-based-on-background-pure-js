@@ -1,5 +1,5 @@
 /** @format */
-function changeTextFromToColor(colorFrom) {
+function changeTextFromToColor(colorFrom = null) {
   // Get and loop through each links.
   for (let spanLink of document.getElementsByClassName("link")) {
     let colorTo = null;
@@ -14,7 +14,7 @@ function changeTextFromToColor(colorFrom) {
         colorTo = "yellow";
         break;
       default:
-        colorTo = "white";
+        colorTo = "black";
     }
     spanLink.style.color = colorTo;
   }
@@ -35,6 +35,7 @@ document.addEventListener("scroll", (e) => {
     lastKnownScrollPosition
   ) {
     console.log("outside");
+    changeTextFromToColor();
   }
 
   for (let item of Array.from(children).reverse()) {
